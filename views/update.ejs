@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('header')%>
+
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ6HEwgP40qXJXzazeJKB4gU2lfGKCqK4pQo_l7qjAIfvwxp81v'); background-repeat: no-repeat; background-size: cover;" >
+
+<%- include('navbar')%>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-5">
+    <form action="/contact/update/<%=id%>" method="POST" >
+        
+      <div class="form-group">
+        <label for="inputEmail4">Name</label>
+        <input type="text" class="form-control" id="inputEmail4" placeholder="Enter name" name="name" value="<%=name %>">
+      </div>
+   <div class="form-group">
+      <label for="inputAddress">Trade</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="Enter Job profile" name="trade" value="<%= trade %>">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Employee Id</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="#22009763" name="emp_id" value="<%= emp_id %>" >
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" placeholder="Enter Employee Address" name="address" value="<%= address %>">
+    </div>
+    
+      <div class="form-group col-md-4" style="padding: 0;">
+        <label for="DOB">Date of birth</label> 
+        <br>
+       <input type="date" id="DOB" name="dob" class="form-control" value="<%=dob%>">
+       </div>
+       <div class="form-group col-md-4" style="padding: 0;">
+        <label for="inputState">Gender</label>
+        <select id="inputState" class="form-control" name="gender">
+          <% if(gender=="Male"){%>
+          <option selected>Male</option>
+          <option >Female</option>
+          <%} else{%>
+            <option >Male</option> 
+          <option selected>Female</option>
+          <% }%>
+        </select>
+      </div>
+    <br>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+  
+
+  </div>
+  <div class="col-sm-3">
+
+    <div class="card" style="width: 18rem; margin-top: 200px;margin-left: 80px;">
+      <div class="card-body">
+        <h5 class="card-title">List of Employees</h5>
+        
+        <p class="card-text">click this link to Navigate to Employees page</p>
+        <button onclick="location.href='/employees'" class="btn btn-dark">View Employees</a></button>
+    
+      </div>
+    </div>
+    </div>
+</div>
+  
+<%- include('footer')%>

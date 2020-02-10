@@ -1,0 +1,44 @@
+<%- include('header')%>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ6HEwgP40qXJXzazeJKB4gU2lfGKCqK4pQo_l7qjAIfvwxp81v'); background-repeat: no-repeat; background-size: cover;" >
+
+  <%- include('navbar')%>
+  <div class="row">
+    <div class="col-sm-6 col-md-6">
+  
+  <div class="listing" style="max-width: 1000px; position: relative; left: 450px;">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">employeeID</th>
+            <th scope="col">Trade</th>
+            <th scope="col">Date of birth</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address</th>
+            <th scope="col">Gender</th>
+          </tr>
+        </thead>
+        <tbody>                               
+          <% employees.forEach(function(element){ %>
+                <tr><td><%=  element.name %> </td>
+                    <td><%=  element.emp_id %> </td>
+                    <td><%=  element.trade %> </td>
+                    <td><%=  element.dob  %> </td>
+                    <td><%=  element.age %> </td>
+                    <td><%=  element.address %> </td>
+                    <td><%=  element.gender %> </td>
+                <td><button onclick = " location.href='/contact/<%=element._id %>' "class="btn btn-success update" value='<%=element.emp_id %>'>Edit</button></td>
+                <td><button onclick = " location.href='/contact/delete/<%=element._id %>' "class="btn btn-warning update" value='<%=element.emp_id %>'>Delete</button></td>
+                </tr>
+                <% }) %>  
+          
+         
+        </tbody>
+      </table>
+      <button onclick="location.href='/contact' " class="btn btn-primary">Add new employes</button>
+
+      </div>
+      </div>
+      </div>
+
+
